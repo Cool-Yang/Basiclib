@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //开启DataBinding
+    dataBinding {
+        enabled = true
+    }
+
+    //支持java8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core-ktx:1.2.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //kotlin
+    implementation libs.kotlin_stdlib
+
+    api libs.support_x
+
+    //rx
+    api libs.rxkotlin
+    api libs.rxandroid
+
+    //lifecycle
+    api libs.lifecycle_compiler
+    api libs.lifecycle_livedata
+    api libs.lifecycle_viewmodel
+
+    //okhttp log
+    api libs.okhttp_logging
+
+    //retrofit
+    api libs.retrofit
+    api libs.retrofit_fastjson
+    api libs.retrofit_rxjava
+
+    //日志打印
+    api libs.timber
+
+    //沉浸式
+    api libs.immersionbar
+    api libs.immersionbar_ktx
+
+    //Rxbinding
+    api libs.rxbinding
+
+    //Glide
+    api libs.glide
+    kapt libs.glide_compiler
+    api libs.glide_okhttp
+
+    //autodispose
+    api libs.autodispose_ktx
+    api libs.autodispose_archs_ktx
+
+    //okhttp log
+    api (libs.logging_interceptor){
+        exclude group: 'org.json', module: 'json'
+    }
+
+}

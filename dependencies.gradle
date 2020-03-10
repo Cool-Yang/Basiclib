@@ -1,0 +1,98 @@
+ext {
+
+    build_version = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 20200214,
+            versionName      : '1.0.0'
+    ]
+
+    versions = [
+            android_plugin       : '3.6.1',
+            kotlin               : '1.3.61',
+
+            androidx             : '1.1.0',
+
+            lifecycle_version    : '2.2.0',
+
+            retrofit             : '2.7.2',
+            retrofit_fastjson    : '2.2.0',
+            rxkotlin             : '2.4.0',
+            rxandroid            : '2.1.1',
+
+            okhttp_logging       : '4.4.1',
+
+            timber               : '4.7.1',
+
+            immersionbar         : '3.0.0',
+
+            rxbinding            : '2.2.0',
+
+            glide                : '4.11.0',
+
+            autodispose          : '1.2.0',
+
+            logging_interceptor  : '3.1.0-rc5',
+
+
+    ]
+
+    build_plugins = [
+            android_gradle   : [group: 'com.android.tools.build', name: 'gradle', version: versions.android_plugin],
+            kotlin_plugin    : [group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: versions.kotlin],
+            //自动生成ID插件
+            kotlin_extensions: [group: 'org.jetbrains.kotlin', name: 'kotlin-android-extensions', version: versions.kotlin],
+            //自动生成空构造方法插件
+            kotlin_noarg     : [group: 'org.jetbrains.kotlin', name: 'kotlin-noarg', version: versions.kotlin],
+            kotlin_allopen   : [group: 'org.jetbrains.kotlin', name: 'kotlin-allopen', version: versions.kotlin],
+    ]
+
+    libs = [
+            //AndroidX
+            support_x                    : [group: 'androidx.appcompat', name: 'appcompat', version: versions.androidx],
+            //kotlin
+            kotlin_stdlib                : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: versions.kotlin],
+            //lifecycle 注解解释器
+            lifecycle_compiler           : [group: 'androidx.lifecycle', name: 'lifecycle-common-java8', version: versions.lifecycle_version],
+            //lifecycle LiveData
+            lifecycle_livedata           : [group: 'androidx.lifecycle', name: 'lifecycle-livedata-ktx', version: versions.lifecycle_version],
+            //lifecycle ViewModel
+            lifecycle_viewmodel          : [group: 'androidx.lifecycle', name: 'lifecycle-viewmodel-ktx', version: versions.lifecycle_version],
+            //OkHttp日志打印
+            okhttp_logging               : [group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: versions.okhttp_logging],
+
+            //retrofit相关
+            retrofit                     : [group: 'com.squareup.retrofit2', name: 'retrofit', version: versions.retrofit],
+            retrofit_rxjava              : [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: versions.retrofit],
+            retrofit_fastjson            : [group: 'org.ligboy.retrofit2', name: 'converter-fastjson-android', version: versions.retrofit_fastjson],
+
+            //主要是为了切换线程
+            rxandroid                    : [group: 'io.reactivex.rxjava2', name: 'rxandroid', version: versions.rxandroid],
+            rxkotlin                     : [group: 'io.reactivex.rxjava2', name: 'rxkotlin', version: versions.rxkotlin],
+
+            //日志打印
+            timber                       : [group: 'com.jakewharton.timber', name: 'timber', version: versions.timber],
+
+            //沉浸式状态栏
+            immersionbar                 : [group: 'com.gyf.immersionbar', name: 'immersionbar', version: versions.immersionbar],
+            //kotlin扩展（可选）
+            immersionbar_ktx             : [group: 'com.gyf.immersionbar', name: 'immersionbar-ktx', version: versions.immersionbar],
+
+            //RxJava binding APIs for Android's UI widgets.
+            rxbinding                    : [group: 'com.jakewharton.rxbinding2', name: 'rxbinding', version: versions.rxbinding],
+
+            //图片
+            glide                        : [group: 'com.github.bumptech.glide', name: 'glide', version: versions.glide],
+            glide_compiler               : [group: 'com.github.bumptech.glide', name: 'compiler', version: versions.glide],
+            glide_okhttp               : [group: 'com.github.bumptech.glide', name: 'okhttp3-integration', version: versions.glide],
+
+            //防止Rxjava内存泄漏
+            autodispose_ktx              : [group: 'com.uber.autodispose', name: 'autodispose-android-ktx', version: versions.autodispose],
+            autodispose_archs_ktx        : [group: 'com.uber.autodispose', name: 'autodispose-android-archcomponents-ktx', version: versions.autodispose],
+
+            //okhttp日志打印
+            logging_interceptor          : [group: 'com.github.ihsanbal', name: 'LoggingInterceptor', version: versions.logging_interceptor],
+
+    ]
+}
