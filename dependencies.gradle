@@ -35,6 +35,9 @@ ext {
 
             logging_interceptor  : '3.1.0-rc5',
 
+            //今日头条适配
+            autosize             : '1.1.2',
+
 
     ]
 
@@ -93,6 +96,9 @@ ext {
 
             //okhttp日志打印
             logging_interceptor          : [group: 'com.github.ihsanbal', name: 'LoggingInterceptor', version: versions.logging_interceptor],
+
+            //今日头条
+            autosize                     : [group: 'me.jessyan', name: 'autosize', version: versions.autosize],
 
     ]
 }
